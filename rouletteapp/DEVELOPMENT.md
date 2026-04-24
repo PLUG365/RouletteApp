@@ -12,10 +12,12 @@ rouletteapp/
 │   ├── App.tsx                         # メインコンポーネント（ルーレットロジック・UI・テーマ編集）
 │   ├── App.css                         # スタイル（ダークテーマ・3D アニメーション・モーダル）
 │   ├── main.tsx                        # エントリポイント
+│   ├── index.css                       # グローバルスタイル（フォント・CSS 変数）
 │   ├── assets/
 │   │   ├── bgm.mp3                     # BGM 音源
 │   │   └── bgmData.ts                  # bgm.mp3 を base64 埋め込みした TS モジュール
 │   └── generated/                      # pac CLI 自動生成コード（手動編集禁止）
+│       ├── index.ts
 │       ├── models/
 │       │   └── MicrosoftDataverseModel.ts
 │       └── services/
@@ -25,10 +27,16 @@ rouletteapp/
 │       ├── commondataserviceforapps/
 │       │   └── commondataserviceforapps.Schema.json  # Dataverse スキーマ（pac 自動生成）
 │       └── appschemas/
-│           └── dataSourcesInfo.ts      # データソースメタデータ（pac 自動生成）
-├── power.config.json                   # 接続設定（.gitignore 対象 — テンプレートから作成）
-├── power.config.template.json          # 接続設定テンプレート
-└── vite.config.ts                      # Vite ビルド設定
+│           └── dataSourcesInfo.ts      # データソース接続設定（pac 自動生成）
+├── package.json                        # 依存関係・スクリプト定義
+├── package-lock.json                   # 依存関係ロックファイル
+├── vite.config.ts                      # Vite ビルド設定
+├── tsconfig.json / tsconfig.*.json     # TypeScript コンパイル設定
+├── eslint.config.js                    # ESLint ルール
+├── index.html                          # Vite HTML エントリポイント
+├── power.config.template.json          # 接続設定テンプレート（要コピー＆編集）
+├── power.config.json                   # 接続設定（.gitignore 対象）
+└── DEVELOPMENT.md                      # 本ファイル
 ```
 
 ## 開発コマンド
