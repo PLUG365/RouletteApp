@@ -1,0 +1,20 @@
+{
+  "appId": "",
+  "appDisplayName": "RouletteApp",
+  "description": null,
+  "environmentId": "<YOUR_ENVIRONMENT_ID>",
+  "region": "prod",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "logoPath": "Default",
+  "localAppUrl": "http://localhost:3000/",
+  "connectionReferences": {},
+  "databaseReferences": {
+    "default": {
+      "cds": {
+        "instanceUrl": "<YOUR_INSTANCE_URL>"
+      }
+    }
+  },
+  "version": "1.0"
+}
