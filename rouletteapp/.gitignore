@@ -26,6 +26,7 @@ dist-ssr
 # Power Apps personal configuration
 # Copy power.config.template.json → power.config.json and fill in your values
 power.config.json
+.power/
 
 # IDE specific files
 .cursor/
