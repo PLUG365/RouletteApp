@@ -191,19 +191,39 @@ pac solution export \
 
 ```
 RouletteApp/
-├── rouletteapp/                    # Power Apps Code App 本体（React + TypeScript + Vite）
+├── rouletteapp/                          # Power Apps Code App 本体（React + TypeScript + Vite）
 │   ├── src/
-│   │   ├── App.tsx                 # メインコンポーネント（ルーレットロジック・UI・テーマ編集）
-│   │   └── assets/
-│   │       ├── bgm.mp3             # BGM 音源ファイル
-│   │       └── bgmData.ts          # bgm.mp3 を base64 埋め込みした TS モジュール
-│   ├── .power/schemas/             # Dataverse テーブルスキーマ定義
-│   └── power.config.json           # Power Apps 接続設定（環境・Dataverse URL）
-├── solution/                       # ソリューション定義
+│   │   ├── App.tsx                       # メインコンポーネント（ルーレットロジック・UI・テーマ編集）
+│   │   ├── App.css                       # スタイル（ダークテーマ・3D アニメーション・モーダル）
+│   │   ├── main.tsx                      # エントリポイント
+│   │   ├── index.css                     # グローバルスタイル（フォント・CSS 変数）
+│   │   ├── assets/
+│   │   │   ├── bgm.mp3                   # BGM 音源ファイル
+│   │   │   └── bgmData.ts               # bgm.mp3 を base64 埋め込みした TS モジュール
+│   │   └── generated/                    # pac CLI 自動生成コード（手動編集禁止）
+│   │       ├── index.ts
+│   │       ├── models/MicrosoftDataverseModel.ts
+│   │       └── services/MicrosoftDataverseService.ts
+│   ├── .power/schemas/
+│   │   ├── appschemas/dataSourcesInfo.ts            # データソース接続設定（pac 自動生成）
+│   │   └── commondataserviceforapps/*.Schema.json   # Dataverse スキーマ（pac 自動生成）
+│   ├── package.json                      # 依存関係・スクリプト定義
+│   ├── package-lock.json                 # 依存関係ロックファイル
+│   ├── vite.config.ts                    # Vite ビルド設定
+│   ├── tsconfig.json / tsconfig.*.json   # TypeScript コンパイル設定
+│   ├── eslint.config.js                  # ESLint ルール
+│   ├── index.html                        # Vite HTML エントリポイント
+│   ├── power.config.template.json        # 接続設定テンプレート（要コピー＆編集）
+│   ├── power.config.json                 # 接続設定（.gitignore 対象）
+│   └── DEVELOPMENT.md                   # 開発者向けドキュメント
+├── solution/
 │   ├── solution.xml
-│   └── RouletteApp_managed.zip     # エクスポート済みマネージドソリューション
-└── SPEC.md                         # 機能仕様書
+│   └── RouletteApp_managed.zip           # エクスポート済みマネージドソリューション
+├── README.md                             # プロジェクト概要・セットアップ手順（本ファイル）
+└── SPEC.md                               # 機能仕様書
 ```
+
+> 開発者向けの詳細（ディレクトリ構成・開発コマンド）は [rouletteapp/DEVELOPMENT.md](rouletteapp/DEVELOPMENT.md) を参照してください。
 
 ## 技術メモ
 
