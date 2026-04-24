@@ -108,5 +108,5 @@
 ### ソースからデプロイする場合の Dataverse セットアップ
 1. **テーブル作成**: make.powerapps.com → Dataverse → テーブル → 新しいテーブル を作成（スキーマ名 `new_talktheme`、主列スキーマ名 `new_name` であることを確認）
 2. **接続設定**: `power.config.json` の `instanceUrl` に Dataverse 組織 URL（`https://<org>.crm.dynamics.com/`）を設定
-3. 詳細手順は [README.md](README.md) の「B. ソースからビルド・デプロイする」を参照
+3. 詳細手順は [rouletteapp/DEVELOPMENT.md](../rouletteapp/DEVELOPMENT.md) を参照
 

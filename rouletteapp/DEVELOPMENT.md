@@ -2,7 +2,7 @@
 
 このディレクトリが Power Apps Code App の実体です。React + TypeScript + Vite で構成され、`pac code push` で Power Platform 環境にデプロイされます。
 
-プロジェクト全体の概要・セットアップ手順はリポジトリルートの [README.md](../README.md) を参照してください。
+プロジェクト全体の概要はリポジトリルートの [README.md](../README.md) を参照してください。開発者向けのセットアップ手順・技術メモは本ドキュメントに記載しています。
 
 ## ディレクトリ構成
 
