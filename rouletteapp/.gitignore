@@ -26,3 +26,7 @@ dist-ssr
 # Power Apps personal configuration
 # Copy power.config.template.json → power.config.json and fill in your values
 power.config.json
+
+# IDE specific files
+.cursor/
+.github/copilot-instructions.md
