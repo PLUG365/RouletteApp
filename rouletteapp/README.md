@@ -1,6 +1,6 @@
 # rouletteapp — Power Apps Code App 本体
 
-このディレクトリが Power Apps Code App の実体です。React + TypeScript + Vite で構成され、`pac powerapps code push` で Power Platform 環境にデプロイされます。
+このディレクトリが Power Apps Code App の実体です。React + TypeScript + Vite で構成され、`pac code push` で Power Platform 環境にデプロイされます。
 
 プロジェクト全体の概要・セットアップ手順はリポジトリルートの [README.md](../README.md) を参照してください。
 
@@ -9,19 +9,21 @@
 ```
 rouletteapp/
 ├── src/
-│   ├── App.tsx                         # メインコンポーネント（ルーレットロジック・UI）
-│   ├── App.css                         # スタイル（ダークテーマ・3D アニメーション）
+│   ├── App.tsx                         # メインコンポーネント（ルーレットロジック・UI・テーマ編集）
+│   ├── App.css                         # スタイル（ダークテーマ・3D アニメーション・モーダル）
 │   ├── main.tsx                        # エントリポイント
-│   ├── assets/                         # 静的アセット（BGM など）
+│   ├── assets/
+│   │   ├── bgm.mp3                     # BGM 音源
+│   │   └── bgmData.ts                  # bgm.mp3 を base64 埋め込みした TS モジュール
 │   └── generated/                      # pac CLI 自動生成コード（手動編集禁止）
 │       ├── models/
-│       │   └── TalkThemesModel.ts      # SharePoint リストの型定義
+│       │   └── MicrosoftDataverseModel.ts
 │       └── services/
-│           └── TalkThemesService.ts    # SharePoint CRUD サービス
+│           └── MicrosoftDataverseService.ts
 ├── .power/
 │   └── schemas/
-│       ├── sharepointonline/
-│       │   └── talkthemes.Schema.json  # SharePoint リストスキーマ（pac 自動生成）
+│       ├── commondataserviceforapps/
+│       │   └── commondataserviceforapps.Schema.json  # Dataverse スキーマ（pac 自動生成）
 │       └── appschemas/
 │           └── dataSourcesInfo.ts      # データソースメタデータ（pac 自動生成）
 ├── power.config.json                   # 接続設定（.gitignore 対象 — テンプレートから作成）
@@ -41,12 +43,12 @@ npm run preview      # dist/ をプレビュー
 
 ## 自動生成ファイルについて
 
-`src/generated/` と `.power/schemas/` 以下のファイルは pac CLI が自動生成します。手動編集は非推奨です。SharePoint リストの接続を変更した場合、これらのファイルは自動的に上書きされます。
+`src/generated/` と `.power/schemas/` 以下のファイルは pac CLI が自動生成します。手動編集は非推奨です。Dataverse の接続を変更した場合、これらのファイルは自動的に上書きされます。
 
 ## 依存パッケージ
 
 | パッケージ | 用途 |
 |---|---|
-| `@microsoft/power-apps` | Power Apps SDK（SharePoint 接続・認証） |
+| `@microsoft/power-apps` | Power Apps SDK（Dataverse 接続・認証） |
 | `react` / `react-dom` | UI フレームワーク |
 | `vite` | ビルドツール |
