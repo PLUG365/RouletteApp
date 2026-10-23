@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # No CI runs on pull requests in this repository, so routine version-update
+  # PRs are disabled (limit 0). Security updates are still opened and grouped.
+  - package-ecosystem: npm
+    directory: /rouletteapp
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    groups:
+      npm-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
